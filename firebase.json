@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "seek-007",
     "public": "build",
     "ignore": [
       "firebase.json",
