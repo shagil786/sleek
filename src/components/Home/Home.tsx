@@ -26,7 +26,6 @@ const Home = () => {
     endpoint: string;
     params?: string;
   }) => {
-    console.log("hi");
     getCountries({ endpoint: endpoint, searchText: params })
       .then((response) => {
         setCardData(response);
