@@ -39,7 +39,7 @@ const Dashboard = () => {
   }, [appData?.data?.borders]);
 
   const DisplayBorders = ({ borderCountries }: { borderCountries: any[] }) => (
-    <div className="flex gap-4">
+    <div className="flex gap-4 flex-wrap">
       {borderCountries?.map((each: any, index: number) => (
         <div className="shadow-custom dark:shadow-dark py-1 px-4" key={index}>
           {each?.[0]?.name?.common}
@@ -51,13 +51,13 @@ const Dashboard = () => {
   return (
     <div className="relative dark:text-white px-4 md:px-20 pt-4 md:pt-6 h-full flex items-center">
       <div
-        className="absolute top-10 flex gap-1 items-center cursor-pointer"
+        className="absolute top-2 md:top-10 flex gap-1 items-center cursor-pointer"
         onClick={() => navigate(-1)}
       >
         <FontAwesomeIcon icon={faArrowLeft} />
         <span>Back</span>
       </div>
-      <div className="flex justify-between md:flex-row flex-col gap-20">
+      <div className="flex justify-between md:flex-row flex-col top-2 gap-8 md:gap-20 h-[calc(100%-32px)] md:h-auto overflow-auto">
         <div className="w-full">
           <img
             src={appData?.data?.flags?.svg}
@@ -141,7 +141,7 @@ const Dashboard = () => {
             </div>
             {borderCountries ? (
               <div className="flex items-center gap-4">
-                <span>Border Countries :</span>
+                <span>Border Countries:</span>
                 <DisplayBorders borderCountries={borderCountries} />
               </div>
             ) : null}
